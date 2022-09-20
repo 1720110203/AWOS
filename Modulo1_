@@ -1,0 +1,79 @@
+#TABLA OFICIALES
+
+NO.  Property              Values 
+1    Descrption Endpoint   Para insertar datos de Oficiales
+2    METHOD                POST
+3    URI                   http://localhost.8000/oficiales/
+4    Query                 N/A
+5    Data                  {"id_oficiales" : int,
+                            "nombre" : "string",
+                            "apellido1" : "string",       
+                            "apellido2" : "string",
+                            "cargo" : "string",
+                            "abscripcion" : "string",
+                            "num_patrulla" : int,
+                            "contraseña" : "string"}
+6    Status code           202
+7    response              {"mensaje" : "Oficial registrado correctamente"}
+8    Status code           400
+9    response              {"mensaje" : "Error al ingresar datos"}
+10   response type         JSON
+11   CURL                  -x POST -d {} -h http://localhost.8000/oficiales/
+----------------------------------------------------------------------------------------
+1    Descrption Endpoint   Para consultar datos de Oficiales
+2    METHOD                GET
+3    URI                   http://localhost.8000/oficiales/
+4    Query                 N/A
+5    Data                  N/A
+6    Status code           202
+7    response              [{"id_oficiales" : int},
+                            {"nombre" : "string"},
+                            {"apellido1" : "string"},       
+                            {"apellido2" : "string"},
+                            {"cargo" : "string"},
+                            {"abscripcion" : "string"},
+                            {"num_patrulla" : int},
+                            {"contraseña" : "string"}]
+8    Status code           400
+9    response              {"mensaje" : "Oficial no existe"}
+10   response type         JSON
+11   CURL                  -x GET -h http://localhost.8000/oficiales/10
+---------------------------------------------------------------------------------------------
+1    Descrption Endpoint   Para actualizar datos de Oficiales
+2    METHOD                PUT
+3    URI                   http://localhost.8000/oficiales/{id_oficiales}
+4    Path Params           id_oficiales
+5    Data                  {"id_oficiales" : int},
+                            {"nombre" : "string"},
+                            {"apellido1" : "string"},       
+                            {"apellido2" : "string"},
+                            {"cargo" : "string"},
+                            {"abscripcion" : "string"},
+                            {"num_patrulla" : int},
+                            {"contraseña" : "string"}
+6    Status code           202
+7    response              {"mensaje" : "Oficial actualizado correctamente"}
+8    Status code           400
+9    response              {"mensaje" : "Erros al actualizar datos del oficial"}
+10   response type         JSON
+11   CURL                  -d {"id_oficiales" : int},
+                            {"nombre" : "string"},
+                            {"apellido1" : "string"},       
+                            {"apellido2" : "string"},
+                            {"cargo" : "string"},
+                            {"abscripcion" : "string"},
+                            {"num_patrulla" : int},
+                            {"contraseña" : "string"} 
+                            -x PUT -h http://localhost.8000/oficiales/11
+-----------------------------------------------------------------------------------------------------------
+1    Descrption Endpoint   Para eliminar datos de Oficiales
+2    METHOD                DELETE
+3    URI                   http://localhost.8000/oficiales/{id_oficiales}
+4    Path Param            id_oficiales
+5    Data                  N/A
+6    Status code           202
+7    response              {"mensaje":"Oficial eliminado correctamente"}
+8    Status code           400
+9    response              {"mensaje" : "Error al eliminar dato del Oficial"}
+10   response type         JSON
+11   CURL                  -x Delete -h http://localhost.8000/oficiales/1
